@@ -1,0 +1,23 @@
+<launch>
+    <let name="urdf_path" value="$(find-pkg-share robo_cruiser)/urdf/robo_cruiser.urdf.xacro"/>
+    <let name="rviz_config" value="$(find-pkg-share robo_cruiser)/rviz/robo_cruiser_config.rviz"/>
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+    </node>
+
+    <!-- <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"/> -->
+
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py"/>
+
+    <node pkg="gazebo_ros" exec="spawn_entity.py" output="screen" args="-topic robot_description -entity robo_cruiser" />
+
+    <node pkg="my_robot_controller" exec="controller">
+          <param name="linear_vel_x" value="-0.1"/>
+          <param name="angular_yaw" value="0.0"/>
+          <param name="forearm_position" value="0.2"/>
+          <param name="hand_position" value="0.2"/>
+     </node> 
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config)" />
+
+</launch>
