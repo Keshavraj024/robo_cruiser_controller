@@ -8,7 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(my_robot_controller REQUIRED)
+find_package(robo_cruise_controller REQUIRED)
 
 install(DIRECTORY
         launch

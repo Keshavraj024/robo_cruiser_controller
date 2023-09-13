@@ -3,10 +3,10 @@
     <gazebo reference="base_link">
         <material>Gazebo/Blue</material>
     </gazebo>
-    <gazebo reference="back_right_wheel_link">
+    <gazebo reference="rear_right_wheel_link">
         <material>Gazebo/Grey</material>
     </gazebo>
-    <gazebo reference="back_left_wheel_link">
+    <gazebo reference="rear_left_wheel_link">
         <material>Gazebo/Grey</material>
     </gazebo>
     <gazebo reference="front_right_wheel_link">
@@ -16,14 +16,15 @@
         <material>Gazebo/Grey</material>
     </gazebo>
 
+
     <gazebo>
         <plugin name="gazebo_ros_diff_drive" filename="libgazebo_ros_diff_drive.so">
 
             <!-- <num_wheel_pairs>2</num_wheel_pairs> -->
-            
+
             <!-- <left_joint>base_front_left_wheel_joint</left_joint> -->
             <left_joint>base_rear_left_wheel_joint</left_joint>
-            
+
             <!-- <right_joint>base_front_right_wheel_joint</right_joint> -->
             <right_joint>base_rear_right_wheel_joint</right_joint>
 
@@ -51,8 +52,8 @@
             <update_rate>10</update_rate>
             <joint_name>base_front_left_steering_wheel_joint</joint_name>
             <joint_name>base_front_right_steering_wheel_joint</joint_name>
-            <joint_name>base_front_right_wheel_joint</joint_name>
-            <joint_name>base_front_left_wheel_joint</joint_name>
+            <joint_name>steering_front_left_wheel_joint</joint_name>
+            <joint_name>steering_front_right_wheel_joint</joint_name>
 
         </plugin>
     </gazebo>

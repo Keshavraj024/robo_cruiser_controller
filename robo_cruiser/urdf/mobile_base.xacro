@@ -113,19 +113,20 @@
         <axis xyz="0 1 0"/>
     </joint> -->
 
-    <joint name="base_front_right_wheel_joint" type="continuous">
+
+    <joint name="steering_front_right_wheel_joint" type="continuous">
         <parent link="front_right_steering_wheel_link"/>
         <child link="front_right_wheel_link"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
 
-    <joint name="base_front_left_wheel_joint" type="continuous">
+    <joint name="steering_front_left_wheel_joint" type="continuous">
         <parent link="front_left_steering_wheel_link"/>
         <child link="front_left_wheel_link"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
-    </joint> 
+    </joint>
 
     <joint name="base_front_left_steering_wheel_joint" type="revolute">
         <parent link="base_link"/>
@@ -134,7 +135,7 @@
         <limit effort="100" velocity="100" lower="${-pi / 4.0}" upper="${pi / 4.0}"/>
         <dynamics friction="0.2" damping="0.2"/>
         <axis xyz="0 0 1" />
-    </joint> 
+    </joint>
 
     <joint name="base_front_right_steering_wheel_joint" type="revolute">
         <parent link="base_link"/>

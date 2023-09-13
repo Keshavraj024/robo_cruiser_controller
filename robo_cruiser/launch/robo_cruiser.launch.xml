@@ -12,12 +12,12 @@
 
     <node pkg="gazebo_ros" exec="spawn_entity.py" output="screen" args="-topic robot_description -entity robo_cruiser" />
 
-    <node pkg="my_robot_controller" exec="controller">
+    <node pkg="robo_cruise_controller" exec="robo_cruise_controller_node">
           <param name="linear_vel_x" value="-0.1"/>
           <param name="angular_yaw" value="0.0"/>
-          <param name="forearm_position" value="0.2"/>
-          <param name="hand_position" value="0.2"/>
-     </node> 
-    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config)" />
+          <param name="left_wheel_position" value="0.0"/>
+          <param name="right_wheel_position" value="0.0"/>
+     </node>
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var rviz_config)" /> 
 
 </launch>
